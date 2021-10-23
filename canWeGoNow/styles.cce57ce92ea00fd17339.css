@@ -1,0 +1,1 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap);:root{--box-shadow:0 0 30px 6px #1f33491a;--background-color:#edecee}html body{margin:0;padding:0;font-family:Inter,sans-serif!important;font-size:16px;background-color:var(--background-color)}.mapboxgl-popup-content{box-shadow:var(--box-shadow)!important}
