@@ -1,0 +1,41 @@
+.dhb-cell {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    border-bottom: solid #e2e2e2 1px;
+
+    &:hover {
+        background-color: #f7f7f7;
+    }
+
+    & .dhb-cell-status {
+        & div {
+            background-color:#cc0000;
+            height: 1rem;
+            width: 1rem;
+            border-radius: 1rem;
+            margin: 0.25rem 0.5rem
+        }
+    }
+
+    & .dhb-cell-info {
+        padding-top:0.25rem;
+        display: flex;
+        flex-direction: row;
+
+        & .dhb-cell-table {
+            width: 50%;
+            padding-right: 0.8rem;
+            border-right: solid black 1px;
+
+            &-column {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        & .dhb-cell-text {
+            width: 50%;
+            padding-left: 0.8rem;
+        }
+    }
+}

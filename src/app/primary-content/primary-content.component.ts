@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DhbService } from '../dhb.service';
 
 @Component({
   selector: 'app-primary-content',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrimaryContentComponent implements OnInit {
 
-  constructor() { }
+  dhbService: DhbService;
+
+  constructor(dhbService: DhbService) { 
+    this.dhbService = dhbService;
+  }
 
   ngOnInit(): void { }
 

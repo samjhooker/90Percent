@@ -16,26 +16,31 @@
         font-weight:bold;
     }
 
-    & .test {
+    & .tile {
         background-color: white;
         box-shadow: var(--box-shadow);
         width: 357px;
-        height: 457px;
-        border-radius: 0 1rem 1rem 1rem;
+        max-height: 457px;
+        overflow-y:auto;
+        border-radius: 1rem;
         margin-bottom: 1rem;
         @media only screen and (max-width: 600px) {
             width:100%;
         }
+
+        & .drag-bar {
+            width: 30%;
+            margin: 1rem auto 0.5rem auto;
+            height:0.3rem;
+            background-color:#e3e3e3;
+            border-radius: 1rem;
+            display: none;
+            @media only screen and (max-width: 600px) {
+                display:block;
+            }
+    
+        }
         
     }
-    & .test2 {
-        background-color: white;
-        box-shadow: var(--box-shadow);
-        width: 357px;
-        height: 150px;
-        border-radius: 0 1rem 1rem 1rem;
-        @media only screen and (max-width: 600px) {
-            width:100%;
-        }
-    }
 }
+

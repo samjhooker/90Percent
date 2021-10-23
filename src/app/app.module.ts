@@ -5,16 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { PrimaryContentComponent } from './primary-content/primary-content.component';
+import { DhbCellComponent } from './dhb-cell/dhb-cell.component';
+import { NgxCsvParserModule } from 'ngx-csv-parser';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     PrimaryContentComponent,
+    DhbCellComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxCsvParserModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
