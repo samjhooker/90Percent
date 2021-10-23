@@ -1,0 +1,41 @@
+#primary-wrapper {
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    padding: 5rem 0 0 5rem;
+    overflow: hidden;
+
+    @media only screen and (max-width: 600px) {
+        padding: 1rem;
+        width:auto;
+    }
+
+    & #page-title {
+        font-size:1.5rem;
+        padding-bottom: 1rem;
+        font-weight:bold;
+    }
+
+    & .test {
+        background-color: white;
+        box-shadow: var(--box-shadow);
+        width: 357px;
+        height: 457px;
+        border-radius: 0 1rem 1rem 1rem;
+        margin-bottom: 1rem;
+        @media only screen and (max-width: 600px) {
+            width:100%;
+        }
+        
+    }
+    & .test2 {
+        background-color: white;
+        box-shadow: var(--box-shadow);
+        width: 357px;
+        height: 150px;
+        border-radius: 0 1rem 1rem 1rem;
+        @media only screen and (max-width: 600px) {
+            width:100%;
+        }
+    }
+}
