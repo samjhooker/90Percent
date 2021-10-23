@@ -4,23 +4,23 @@
      </div>
     <div class=dhb-cell-content>
         <div class=dhb-cell-header>
-            <strong>{{dhbSummary?.dhbName}}</strong>
+            <strong>{{ dhbSummary?.dhbName }}</strong>
         </div>
         <div class=dhb-cell-info>
             <div class=dhb-cell-table>
                 <div class=dhb-cell-table-row>
                     <div class=dhb-cell-table-column>
                       <span>first</span>
-                      <span>{{dhbSummary?.totalFirstDoses}}</span>
+                      <span>{{ dhbSummary?.getFirstDosePercentage() }}</span>
                     </div>
                     <div class=dhb-cell-table-column>
                       <span>second</span>
-                      <span>{{dhbSummary?.totalSecondDoses}}</span>
+                      <span>{{ dhbSummary?.getSecondDosePercentage() }}</span>
                     </div>
                 </div>
             </div>
             <div class=dhb-cell-text>
-                <strong> 16432 </strong> more until 90%
+                <strong> {{ dhbSummary?.getMoreUntil90Percent() }} </strong> more until 90%
             </div>
         </div>
     </div>

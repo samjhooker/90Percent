@@ -16,6 +16,27 @@
         font-weight:bold;
     }
 
+    & .actions {
+        & button {
+            width: 100%;
+            font-size: 1rem;
+            padding: 1rem;
+            background: none;
+            border: none;
+
+            &:hover {
+                background-color: #f7f7f7;
+            }
+            &:active {
+                background-color: #F1F1F1;
+            }
+        }
+        & #vaccine-button {
+            color: #cc0000;
+            border-top: solid 1px #e2e2e2;
+        }
+    }
+
     & .tile {
         background-color: white;
         box-shadow: var(--box-shadow);
@@ -26,6 +47,7 @@
         margin-bottom: 1rem;
         @media only screen and (max-width: 600px) {
             width:100%;
+            max-height:none;
         }
 
         & .drag-bar {

@@ -4,5 +4,11 @@
         <div class=drag-bar></div>
         <app-dhb-cell *ngFor="let summary of dhbService.dhbSummaries$ | async;" [dhbSummary]="summary"></app-dhb-cell>
     </div>
+
+    <div class="tile actions"> 
+        <button (click)="navigateToInfoPage()">Learn about vaccine safety</button>
+        <button (click)="navigateToBookVaccinePage()" id=vaccine-button>Book my vaccine now</button>
+        
+    </div>
     
 </div>

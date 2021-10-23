@@ -16,4 +16,12 @@ export class PrimaryContentComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  navigateToInfoPage() {
+    (window as any).open("https://www.health.govt.nz/your-health/healthy-living/immunisation/vaccine-safety", "_blank");
+  }
+
+  navigateToBookVaccinePage() {
+    (window as any).open("https://bookmyvaccine.covid19.health.nz/", "_blank");
+  }
+
 }
