@@ -8,10 +8,7 @@ import { DhbService } from '../dhb.service';
 })
 export class PrimaryContentComponent implements OnInit {
 
-  dhbService: DhbService;
-
-  constructor(dhbService: DhbService) { 
-    this.dhbService = dhbService;
+  constructor() { 
   }
 
   ngOnInit(): void { }

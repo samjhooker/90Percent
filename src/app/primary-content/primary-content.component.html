@@ -1,8 +1,14 @@
 <div id=primary-wrapper>
+
     <div id=page-title>90 Percent</div>
+    <div id=menu-bar>
+        <div class=menu-item routerLink="/vaccinations" routerLinkActive="selected">Vaccinations</div>
+        <div class=menu-item routerLink="/locationsOfInterest" routerLinkActive="selected">Locations of Interest</div>
+        <div class=menu-item routerLink="/about" routerLinkActive="selected">About</div>
+    </div>
     <div class=tile> 
         <div class=drag-bar></div>
-        <app-dhb-cell *ngFor="let summary of dhbService.dhbSummaries$ | async;" [dhbSummary]="summary"></app-dhb-cell>
+        <router-outlet></router-outlet>
     </div>
 
     <div class="tile actions"> 

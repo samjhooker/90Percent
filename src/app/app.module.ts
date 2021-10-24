@@ -8,6 +8,9 @@ import { PrimaryContentComponent } from './primary-content/primary-content.compo
 import { DhbCellComponent } from './dhb-cell/dhb-cell.component';
 import { NgxCsvParserModule } from 'ngx-csv-parser';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './about/about.component';
+import { VaccinationsComponent } from './vaccinations/vaccinations.component';
+import { LocationsOfInterestComponent } from './locations-of-interest/locations-of-interest.component';
 
 
 @NgModule({
@@ -16,6 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     MapComponent,
     PrimaryContentComponent,
     DhbCellComponent,
+    AboutComponent,
+    VaccinationsComponent,
+    LocationsOfInterestComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,31 @@
         font-weight:bold;
     }
 
+    & #menu-bar {
+        display: inline-flex;
+        & .menu-item {
+            background-color: #F1F1F1;
+            padding: 0.5rem 0.8rem;
+            border-radius: 1rem;
+            margin: 0 0.25rem 0.5rem 0.25rem;
+            box-shadow: var(--box-shadow);
+            font-size: 0.85rem;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #f7f7f7;
+            }
+            &:active {
+                background-color: white;
+            }
+
+            &.selected {
+                background-color: white;
+            }
+        }
+    }
+
     & .actions {
         & button {
             width: 100%;
@@ -23,6 +48,7 @@
             padding: 1rem;
             background: none;
             border: none;
+            cursor: pointer;
 
             &:hover {
                 background-color: #f7f7f7;
