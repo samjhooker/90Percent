@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { VaccinationsComponent } from './vaccinations/vaccinations.component';
 import { LocationsOfInterestComponent } from './locations-of-interest/locations-of-interest.component';
+import { DhbVaccinationsComponent } from './dhb-vaccinations/dhb-vaccinations.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { LocationsOfInterestComponent } from './locations-of-interest/locations-
     AboutComponent,
     VaccinationsComponent,
     LocationsOfInterestComponent,
+    DhbVaccinationsComponent,
   ],
   imports: [
     BrowserModule,

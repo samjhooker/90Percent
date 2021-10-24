@@ -1,15 +1,12 @@
-import { DhbCategory } from "./DhbCategory";
-import { DhbUptake } from "./DhbUptake";
 
-export class DhbSummary {
-    dhbName: string;
+export class DhbCategory {
+    categoryName: string;
     totalPopulation = 0;
     totalFirstDoses = 0;
     totalSecondDoses = 0;
-    allUptakes: DhbUptake[] = [];
 
-    constructor (dhbName: string) {
-        this.dhbName = dhbName;
+    constructor (categoryName: string) {
+        this.categoryName = categoryName;
     }
 
     getFirstDosePercentage(): string {

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DhbSummary } from '../models/DhbSummary';
 
 @Component({
@@ -11,9 +12,13 @@ export class DhbCellComponent implements OnInit {
   @Input()
   dhbSummary: DhbSummary | undefined;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  navigateToDhbVaccinations() {
+    this.router.navigate([`/vaccinations/${this.dhbSummary?.dhbName}`]);
   }
 
 }

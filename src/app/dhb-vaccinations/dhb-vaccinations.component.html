@@ -1,0 +1,54 @@
+<div id=dhb-vaccinations>
+    <div id=dhb-vaccinations-header>
+
+        <div class=back routerLink='/vaccinations'></div>
+        <div class=dhb-cell-status ></div>
+
+        <span><strong>{{dhbName}}</strong></span>
+
+    </div>
+    <div id=dhb-vaccinations-content>
+        <div id=menu>
+            <div class=menu-item [class.selected]="selectedMenuValue == 'dhbName'" (click)="selectMenuItem('dhbName')">all</div>
+            <div class=menu-item [class.selected]="selectedMenuValue == 'ageGroup'" (click)="selectMenuItem('ageGroup')">age</div>
+            <div class=menu-item [class.selected]="selectedMenuValue == 'ethnicGroup'" (click)="selectMenuItem('ethnicGroup')">ethnicity</div>
+            <div class=menu-item [class.selected]="selectedMenuValue == 'gender'" (click)="selectMenuItem('gender')">gender</div>
+        </div>
+
+
+        <div *ngIf="!(dhbCategories$ | async)?.length" style='padding: 1rem'>
+            Hey, this doesn't seem right. No Data to see here.
+        </div>
+
+        <table *ngFor="let category of dhbCategories$ | async">
+            <div><strong>{{category.categoryName}}</strong></div>
+
+            <tr>
+                <th>population</th>
+                <td>{{category.totalPopulation}}</td>
+            </tr>
+            <tr>
+                <th>1st doses</th>
+                <td>{{category.totalFirstDoses}}</td>
+            </tr>
+            <tr>
+                <th>2nd doses</th>
+                <td>{{category.totalSecondDoses}}</td>
+            </tr>
+            <tr>
+                <th>doses until 90%</th>
+                <td>{{category.getMoreUntil90Percent()}}</td>
+            </tr>
+            <tr>
+                <th>1nd dose percentage</th>
+                <td>{{category.getFirstDosePercentage()}}</td>
+            </tr>
+            <tr>
+                <th>2nd dose percentage</th>
+                <td>{{category.getSecondDosePercentage()}}</td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>

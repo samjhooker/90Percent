@@ -34,10 +34,14 @@
             }
             &:active {
                 background-color: white;
+                outline: 1px solid #c4c4c4;
+
             }
 
             &.selected {
                 background-color: white;
+                outline: 1px solid #c4c4c4;
+
             }
         }
     }
