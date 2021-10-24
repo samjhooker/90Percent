@@ -18,6 +18,7 @@
 
     & #menu-bar {
         display: inline-flex;
+        flex-wrap: wrap;
         & .menu-item {
             background-color: #F1F1F1;
             padding: 0.5rem 0.8rem;
