@@ -6,7 +6,8 @@ export const environment = {
     style: 'mapbox://styles/samjhooker/ckv1uct5r16a915qzvo21y74n'
   },
   moh: {
-    dhbApiUrl: 'https://raw.githubusercontent.com/minhealthnz/nz-covid-data/main/vaccine-data/latest/dhb_residence_uptake.csv'
+    dhbApiUrl: 'https://raw.githubusercontent.com/minhealthnz/nz-covid-data/main/vaccine-data/latest/dhb_residence_uptake.csv',
+    loiApiUrl: 'https://raw.githubusercontent.com/minhealthnz/nz-covid-data/main/locations-of-interest/august-2021/locations-of-interest.geojson'
   }
 };
 
