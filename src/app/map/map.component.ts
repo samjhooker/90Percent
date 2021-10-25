@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
+import { MapService } from '../map.service';
 
 @Component({
   selector: 'app-map',
@@ -12,8 +13,9 @@ export class MapComponent implements OnInit {
 
   map: mapboxgl.Map | undefined;
   hoveredStateId: any = null;
+  selectedStateIds = [];
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private mapService: MapService){}
 
   ngOnInit() {
     this.initMapbox();
@@ -52,6 +54,28 @@ export class MapComponent implements OnInit {
     return center;
   }
 
+  setupMapChangeListener() {
+    this.mapService.getSelectedDhb().subscribe((selectedDhb: string) => {
+      let features = this.map?.querySourceFeatures('allDhb', {
+        sourceLayer: 'dhb-fills'
+      });
+
+      features?.forEach((feature) => {
+        if(feature.properties?.GroupedDHB == selectedDhb) {
+          this.map?.setFeatureState(
+            { source: 'allDhb', id: feature.id},
+            { selected : true }
+          );
+        } else {
+          this.map?.setFeatureState(
+            { source: 'allDhb', id: feature.id},
+            { selected : false }
+          );
+        }        
+      });
+    });
+  }
+
   initMapbox() {
     this.map = new mapboxgl.Map({
       accessToken: environment.mapbox.token,
@@ -71,16 +95,18 @@ export class MapComponent implements OnInit {
         'source': 'allDhb',
         'layout': {},
         'paint': {
-          'fill-color': "rgba(167, 167, 167, 0.3)",
+          'fill-color': "rgba(167, 167, 167, 0.4)",
           'fill-opacity': [
             'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            1,
+            ['boolean', ['feature-state', 'hover'], false], 0.5,
+            ['boolean', ['feature-state', 'selected'], false], 1,
             0,
           ],
           'fill-opacity-transition': {duration: 500, delay: 0},
         }
       });
+
+      this.setupMapChangeListener();
     })
 
     const popup = new mapboxgl.Popup({

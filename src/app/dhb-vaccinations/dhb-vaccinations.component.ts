@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { from, Observable } from 'rxjs';
 import { DhbService } from '../dhb.service';
+import { MapService } from '../map.service';
 import { DhbCategory } from '../models/DhbCategory';
 
 @Component({
@@ -14,12 +15,13 @@ export class DhbVaccinationsComponent implements OnInit {
   dhbName = ''
   selectedMenuValue = 'dhbName';
 
-  constructor(private route: ActivatedRoute, private dhbService: DhbService) { }
+  constructor(private route: ActivatedRoute, private dhbService: DhbService, private mapService: MapService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.dhbName = params?.dhbName;
       this.dhbCategories$ = from(this.dhbService.getDhbCategory(this.dhbName, 'dhbName'));
+      this.mapService.selectDhb(this.dhbName);
     });
   }
 
