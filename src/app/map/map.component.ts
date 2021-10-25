@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
 
@@ -9,11 +10,17 @@ import { environment } from 'src/environments/environment';
 })
 export class MapComponent implements OnInit {
 
-map: mapboxgl.Map | undefined;
+  map: mapboxgl.Map | undefined;
   hoveredStateId: any = null;
+
+  constructor(private router: Router){}
 
   ngOnInit() {
     this.initMapbox();
+  }
+  
+  navigateToDhbVaccinations(dhbName: string) {
+    this.router.navigate([`/vaccinations/${dhbName}`]);
   }
 
   getFeatureCenter(feature: any) {
@@ -112,6 +119,12 @@ map: mapboxgl.Map | undefined;
         );
       }
       this.hoveredStateId = null;
+    });
+
+    this.map?.on('click', 'dhb-fills', (e: any) => {
+      if (this.hoveredStateId !== null) {
+        this.navigateToDhbVaccinations(e.features[0].properties.GroupedDHB);
+      }
     });
   }
 }

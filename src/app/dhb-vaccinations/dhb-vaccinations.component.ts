@@ -17,9 +17,10 @@ export class DhbVaccinationsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private dhbService: DhbService) { }
 
   ngOnInit(): void {
-    this.dhbName = this.route.snapshot.params['dhbName'];
-
-    this.dhbCategories$ = from(this.dhbService.getDhbCategory(this.dhbName, 'dhbName'));
+    this.route.params.subscribe((params) => {
+      this.dhbName = params?.dhbName;
+      this.dhbCategories$ = from(this.dhbService.getDhbCategory(this.dhbName, 'dhbName'));
+    });
   }
 
   selectMenuItem(menuValue: string) {

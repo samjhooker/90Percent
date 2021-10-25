@@ -15,6 +15,8 @@ export class DhbService {
   public allData$ = new BehaviorSubject<DhbUptake[]>([]);
   public dhbSummaries$ = new BehaviorSubject<DhbSummary[]>([]);
 
+  dhbsToIgnore = ['Overseas / Unknown', 'Various'];
+
   constructor(private http: HttpClient) {
 
     this.http.get(environment.moh.dhbApiUrl, { responseType: 'text' })
@@ -90,7 +92,7 @@ export class DhbService {
         summary.totalFirstDoses += uptake.firstDoseAdministered;
         summary.totalSecondDoses += uptake.secondDoseAdministered;
         summary.allUptakes.push(uptake);
-      } else {
+      } else if (!this.dhbsToIgnore.includes(uptake.dhbName)){
         let newSummary = new DhbSummary(uptake.dhbName)
         newSummary.totalPopulation += uptake.population;
         newSummary.totalFirstDoses += uptake.firstDoseAdministered;

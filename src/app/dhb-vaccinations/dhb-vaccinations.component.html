@@ -25,19 +25,19 @@
 
             <tr>
                 <th>population</th>
-                <td>{{category.totalPopulation}}</td>
+                <td>{{category.totalPopulation | number}}</td>
             </tr>
             <tr>
                 <th>1st doses</th>
-                <td>{{category.totalFirstDoses}}</td>
+                <td>{{category.totalFirstDoses | number}}</td>
             </tr>
             <tr>
                 <th>2nd doses</th>
-                <td>{{category.totalSecondDoses}}</td>
+                <td>{{category.totalSecondDoses | number}}</td>
             </tr>
             <tr>
                 <th>doses until 90%</th>
-                <td>{{category.getMoreUntil90Percent()}}</td>
+                <td>{{category.getMoreUntil90Percent() | number}}</td>
             </tr>
             <tr>
                 <th>1nd dose percentage</th>
