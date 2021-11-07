@@ -1,1 +1,7 @@
-<p>locations of interest coming soon...</p>
+<p>Viewing all locations of interest ordered by date added.
+    <br>Last updated {{ (((mapService.allLocationsOfInterest$ | async )?.features | first)?.properties?.Added | date) }}
+    <br> <br>View map to see all locations of interest
+</p>
+
+<app-loi-cell *ngFor="let loiFeature of (mapService.allLocationsOfInterest$ | async)?.features"
+    [loiFeature]="loiFeature"></app-loi-cell>

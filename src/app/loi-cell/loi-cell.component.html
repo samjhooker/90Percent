@@ -1,0 +1,14 @@
+<div class=loi-cell (click)='navigateToLocationOfInterest()'>
+    <div class=loi-cell-header>
+        <strong>{{loiFeature?.properties?.Event}}</strong>
+        <div class=loi-cell-address>{{loiFeature?.properties?.Location}}</div>
+    </div>
+    <div class=loi-cell-info>
+        <div class=loi-cell-date>
+            {{loiFeature?.properties?.Start}}
+        </div>
+        <div class=loi-cell-date>
+            {{loiFeature?.properties?.End}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div id=loi>
+    <div id=loi-header>
+
+        <div class=back routerLink='/locationsOfInterest'></div>
+        <span><strong>{{ (loi$ | async)?.properties?.Event }}</strong></span>
+
+    </div>
+    <div id=loi-content>
+
+        <div class=loi-cell-info>
+            <div class=loi-cell-date>
+                <strong>from</strong><br>
+                {{(loi$ | async)?.properties?.Start}}
+            </div>
+            <div class=loi-cell-date>
+                <strong>to</strong><br>
+
+                {{(loi$ | async)?.properties?.End}}
+            </div>
+        </div>
+
+        <p id=loi-cell-location>
+            {{ (loi$ | async)?.properties?.Location }}
+        </p>
+        <p>
+            {{ (loi$ | async)?.properties?.Advice }}
+        </p>
+       
+
+    </div>
+
+</div>

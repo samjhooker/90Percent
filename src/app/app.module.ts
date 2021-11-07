@@ -12,6 +12,9 @@ import { AboutComponent } from './about/about.component';
 import { VaccinationsComponent } from './vaccinations/vaccinations.component';
 import { LocationsOfInterestComponent } from './locations-of-interest/locations-of-interest.component';
 import { DhbVaccinationsComponent } from './dhb-vaccinations/dhb-vaccinations.component';
+import { LoiCellComponent } from './loi-cell/loi-cell.component';
+import { FirstPipe } from './pipes/first.pipe';
+import { LocationOfInterestComponent } from './location-of-interest/location-of-interest.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import { DhbVaccinationsComponent } from './dhb-vaccinations/dhb-vaccinations.co
     VaccinationsComponent,
     LocationsOfInterestComponent,
     DhbVaccinationsComponent,
+    LoiCellComponent,
+    FirstPipe,
+    LocationOfInterestComponent
   ],
   imports: [
     BrowserModule,

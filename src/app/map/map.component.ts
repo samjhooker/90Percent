@@ -27,6 +27,10 @@ export class MapComponent implements OnInit {
     this.router.navigate([`/vaccinations/${dhbName}`]);
   }
 
+  navigateToLocationOfInterest(loiId: string) {
+    this.router.navigate([`/locationsOfInterest/${loiId}`]);
+  }
+
   getFeatureCenter(feature: any) {
     let center = [];
     let latitude = 0;
@@ -105,7 +109,7 @@ export class MapComponent implements OnInit {
 
     this.map?.addSource('allDhb', {
       'type': 'geojson',
-      'data': '/assets/dbh.geojson'
+      'data': '/90Percent/assets/dbh.geojson'
     });
 
     this.map?.addLayer({
@@ -231,14 +235,15 @@ export class MapComponent implements OnInit {
           filter: ['!', ['has', 'point_count']],
           paint: {
             'circle-color': '#cc0000',
-            'circle-radius': 6,
+            'circle-radius': 10,
             'circle-stroke-width': 1,
             'circle-stroke-color': '#fff'
           }
         });
     
         this.map?.on('click', 'unclustered-point', (e) => {
-          console.log('clicked', e);
+          let point = e.features?.find(e => true)?.properties?.id;
+          this.navigateToLocationOfInterest(point);
         });
 
         this.locationsOfInterestLoaded = true;

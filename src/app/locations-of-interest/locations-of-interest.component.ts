@@ -8,10 +8,13 @@ import { MapService } from '../map.service';
 })
 export class LocationsOfInterestComponent implements OnInit {
 
-  constructor(private mapService: MapService) { }
+  mapService: MapService;
+
+  constructor(mapService: MapService) { 
+    this.mapService = mapService;
+  }
 
   ngOnInit(): void {
-    this.mapService.loadLocationsOfInterest();
     this.mapService.setShowLocationsOfInterest(true);
   }
 

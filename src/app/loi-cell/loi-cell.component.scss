@@ -1,0 +1,31 @@
+.loi-cell {
+    padding:1rem;
+    border-bottom: solid #e2e2e2 1px;
+
+    &:hover {
+        background-color: #f7f7f7;
+    }
+    &:active {
+        background-color: #F1F1F1;
+    }
+
+    & .loi-cell-address {
+        font-size: 0.85rem;
+    }
+
+    & .loi-cell-info {
+        padding-top:0.6rem;
+        display: flex;
+        flex-direction: row;
+
+        & .loi-cell-date {
+            padding: 0 1.5rem;
+            text-align: center;
+
+            &:first-child {
+                border-right: solid black 1px;
+            }
+        }
+    }
+}
+
